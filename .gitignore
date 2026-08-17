@@ -1,0 +1,4 @@
+.env
+vendas.csv
+venv
+.mypy_cache
