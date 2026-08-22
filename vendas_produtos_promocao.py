@@ -1,24 +1,23 @@
 import os
 
 import pandas as pd
+from dotenv import load_dotenv
 
-sheet_id = os.getenv("sheet_id")
-gid = os.getenv("gid")
+load_dotenv()
 
-url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
+# sheet_id = os.getenv("sheet_id")
+# gid = os.getenv("gid")
 
-df = (
-    pd.read_csv(url, skiprows=3, header=0)
-    .dropna(how="all")["COD PROD."]
-    .dropna()
-    .astype(int)
-)
+# url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
 
-codes_list = df.tolist()
+# df = (
+#     pd.read_csv(url, skiprows=3, header=0)
+#     .dropna(how="all")["COD PROD."]
+#     .dropna()
+#     .astype(int)
+# )
 
-df.to_csv(
-    "vendas.csv",
-    index=False,
-)
+# codes_list = df.tolist()
 
 query = os.getenv("query_sql")
+print(query)
