@@ -23,10 +23,10 @@ code_list = df.tolist()
 first_metad_query = query_sql[:1135]
 second_metad_query = query_sql[1135:]
 
-for codigo in code_list:
-    if code_list.index(codigo) == len(code_list) - 1:
-        first_metad_query += str(codigo)
+for code in code_list:
+    if code_list.index(code) == len(code_list) - 1:
+        first_metad_query += str(code)
         break
-    first_metad_query += str(codigo) + ","
+    first_metad_query += str(code) + ","
 
 full_query = first_metad_query + second_metad_query
