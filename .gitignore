@@ -2,3 +2,4 @@
 vendas.csv
 venv
 .mypy_cache
+query.sql
