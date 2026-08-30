@@ -6,4 +6,12 @@ connection_config = {
     "host": "127.0.0.1",
     "database": "employees",
 }
-conection = connector.connect(**connection_config)
+connection = connector.connect(**connection_config)
+
+
+def run_query(query):
+    if connection:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            rows = cursor.fetchall()
+            return rows
